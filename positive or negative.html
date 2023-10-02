@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positive or Negative</title>
+    <link href="mystyles.css" rel="stylesheet"/>
+</head>
+<body>
+    <style>
+        h1{
+            color: white;
+        }
+        body{
+            background-image: url(c.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+      
+        <h1>Positive or Negative</h1>
+        <div class="container">
+        <b><label for="Num">ENTER NUMBER: </label></b>
+        <input type="number" id="Num"/><br/>
+    
+        <button onclick="check()">CHECK</button><br/><br/>
+        <h1>The number is </h1><h1 id="sagot"></h1><br/>
+        <button onclick="ClearFields()">CLEAR</button><br/><br/>
+        <a href="index.html">Back to Menu</a>
+        </div>
+        <script>
+            function check()
+            {
+                var num = parseFloat(document.getElementById('Num').value);
+    
+                if (isNaN(num)) {
+                    alert("Please enter valid number.");
+                    return;
+                }
+    
+                if (num>=0){
+                    document.getElementById('sagot').innerHTML = 'Positive' ;
+                    document.getElementById('sagot').style.color = 'SKYBLUE' ;
+                }
+                else {
+                    document.getElementById('sagot').innerHTML = 'Negative';
+                    document.getElementById('sagot').style.color = 'RED' ;
+                }
+            
+            }
+            function ClearFields() {
+    
+                document.getElementById("Num").value = "";
+                document.getElementById("sagot").innerHTML = "";
+            }
+        </script>
+</body>
+</html>
